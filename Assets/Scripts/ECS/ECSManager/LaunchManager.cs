@@ -178,6 +178,7 @@ public class LaunchManager : MonoBehaviour
             if (part == Launchers[i].Platform || part == Launchers[i].Body || part == Launchers[i].Guns)
             {
                 VfxManager.Instance.DoExplosion(EM.GetComponentData<Translation>(part).Value, 0.85f);
+                AudioManager.Instance.DoBombExplosion();
 
                 EM.RemoveComponent(Launchers[i].Platform, typeof(MissileLauncherAlive));
                 EM.RemoveComponent(Launchers[i].Body, typeof(MissileLauncherAlive));

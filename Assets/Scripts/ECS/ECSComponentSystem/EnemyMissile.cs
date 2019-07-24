@@ -30,13 +30,12 @@ public class EnemyMissile : ComponentSystem
         for (int i = 0; i < Launchers.Count; i++)
         {
             LaunchManager.Instance.DestroyLauncher(Launchers[i]);
-            AudioManager.Instance.DoBombExplosion();
+            
         }
 
         for (int i = 0; i < Buildings.Count; i++)
         {
             BuildingManager.Instance.DestroyBuilding(Buildings[i]);
-            AudioManager.Instance.DoBombExplosion();
         }
 
         RespawnPos.Clear();

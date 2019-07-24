@@ -102,6 +102,8 @@ public class BuildingManager : MonoBehaviour
             if(entity == Buildings[i])
             {
                 VfxManager.Instance.DoExplosion(EM.GetComponentData<Translation>(entity).Value, 1.25f);
+                AudioManager.Instance.DoBombExplosion();
+
                 BuildingAlive[EM.GetComponentData<BuildingData>(entity).Index] = false;                
                 Buildings.RemoveAt(i);
                 EM.RemoveComponent<BuildingIsAlive>(entity);
