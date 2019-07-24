@@ -165,6 +165,7 @@ public class GameManager : MonoBehaviour
         while(Time.timeScale > timeScale)
         {
             Time.timeScale -= Time.deltaTime;
+            yield return null;
         }
         Time.timeScale = timeScale;
 
@@ -173,6 +174,7 @@ public class GameManager : MonoBehaviour
         while (Time.timeScale < 1)
         {
             Time.timeScale += Time.deltaTime;
+            yield return null;
         }
 
         Time.timeScale = 1;
