@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
         BuildingManager.Instance.SpawnBuilding(true);
         LaunchManager.Instance.StartGame(10 + (int)CurrentGameLevel * 2, 1 + (int)(0.5f * CurrentGameLevel));
-        EnemyManager.Instance.StartGame(10 + (int)CurrentGameLevel * 5, Mathf.Min(0, 1 - CurrentGameLevel), Mathf.Min(5, 10 - CurrentGameLevel), 0 + (int)(CurrentGameLevel * 0.75f), Mathf.Min(2, 4 - CurrentGameLevel), Mathf.Min(7, 10 - CurrentGameLevel));
+        EnemyManager.Instance.StartGame(10 + (int)CurrentGameLevel * 5, Mathf.Max(0, 1 - CurrentGameLevel), Mathf.Max(5, 10 - CurrentGameLevel), 0 + (int)(CurrentGameLevel * 0.75f), Mathf.Max(2, 4 - CurrentGameLevel), Mathf.Max(7, 10 - CurrentGameLevel));
     }
 
     private void ContinueGame()
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
         BuildingManager.Instance.SpawnBuilding(false);
         LaunchManager.Instance.StartGame(10 + (int)CurrentGameLevel * 2, 1 + (int)(0.5f * CurrentGameLevel));
-        EnemyManager.Instance.StartGame(10 + (int)CurrentGameLevel * 5, Mathf.Min(0, 1 - CurrentGameLevel), Mathf.Min(5, 10 - CurrentGameLevel), 0 + (int)(CurrentGameLevel * 0.75f), Mathf.Min(2, 4 - CurrentGameLevel), Mathf.Min(7, 10 - CurrentGameLevel));
+        EnemyManager.Instance.StartGame(10 + (int)CurrentGameLevel * 5, Mathf.Max(0, 1 - CurrentGameLevel), Mathf.Max(5, 10 - CurrentGameLevel), 0 + (int)(CurrentGameLevel * 0.75f), Mathf.Max(2, 4 - CurrentGameLevel), Mathf.Max(7, 10 - CurrentGameLevel));
     }
 
     public IEnumerator LevelUp()
